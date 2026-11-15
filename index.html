@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="EverythingHub — a free directory of useful tools, learning resources, creative apps and open-source projects.">
+  <meta name="theme-color" content="#0b1020">
+  <title>EverythingHub — Everything, one place</title>
+  <style>
+    :root{color-scheme:dark;--bg:#090e1b;--panel:#111a2d;--panel2:#151f35;--line:#26334c;--text:#edf3ff;--muted:#9ba9c2;--accent:#8b9cff;--accent2:#54d6c7;--shadow:0 18px 55px #0005}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 15% -10%,#25366b66,transparent 42%),radial-gradient(ellipse at 90% 0%,#14534d33,transparent 32%),var(--bg);color:var(--text);font:15px/1.55 Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif}
+    a{color:inherit;text-decoration:none}button,input{font:inherit}.wrap{width:min(1160px,calc(100% - 40px));margin:auto}
+    header{position:sticky;top:0;z-index:10;background:#090e1bdc;backdrop-filter:blur(16px);border-bottom:1px solid #ffffff12}
+    .nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{display:flex;align-items:center;gap:11px;font-weight:800;letter-spacing:-.5px;font-size:19px}.logo{width:36px;height:36px;border-radius:12px;background:linear-gradient(135deg,#8c9cff,#55d6c7);display:grid;place-items:center;color:#0b1224;font-weight:900;font-size:19px;box-shadow:0 7px 25px #7d8cff44}.navlinks{display:flex;gap:24px;color:var(--muted);font-size:13px}.navlinks a:hover{color:white}.github{border:1px solid var(--line);border-radius:10px;padding:9px 13px;font-size:12px;color:#dce5fa}
+    .hero{padding:78px 0 42px;text-align:center}.eyebrow{display:inline-flex;align-items:center;gap:8px;border:1px solid #8b9cff44;background:#8b9cff12;color:#c3ccff;border-radius:99px;padding:7px 12px;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}.dot{width:7px;height:7px;background:var(--accent2);border-radius:50%;box-shadow:0 0 12px var(--accent2)}h1{font-size:clamp(42px,7vw,76px);line-height:1.02;letter-spacing:-.065em;margin:22px auto 17px;max-width:850px}h1 span{background:linear-gradient(90deg,#a8b5ff,#66e0d1);-webkit-background-clip:text;background-clip:text;color:transparent}.sub{color:var(--muted);max-width:590px;margin:0 auto 28px;font-size:16px}.searchbox{max-width:660px;margin:auto;display:flex;align-items:center;gap:12px;padding:8px 9px 8px 17px;background:#131d32;border:1px solid #344361;border-radius:15px;box-shadow:var(--shadow)}.searchbox svg{flex:none;color:#93a4c5}.searchbox input{min-width:0;flex:1;background:transparent;border:0;outline:0;color:white;padding:9px 0}.searchbox input::placeholder{color:#7f8da8}.key{font-size:11px;color:#8998b4;border:1px solid #35425c;border-radius:6px;padding:3px 7px}.hero-meta{display:flex;justify-content:center;gap:22px;margin-top:17px;color:#8190aa;font-size:11px}.hero-meta span{display:flex;align-items:center;gap:6px}
+    .section-head{display:flex;align-items:end;justify-content:space-between;gap:16px;margin:34px 0 17px}.section-head h2{font-size:22px;letter-spacing:-.04em;margin:0}.section-head p{color:var(--muted);font-size:12px;margin:4px 0 0}.count{color:#8e9db8;font-size:12px}
+    .filters{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 22px}.filter{border:1px solid var(--line);background:#111a2d;color:#aebbd2;border-radius:99px;padding:8px 13px;font-size:12px;cursor:pointer;transition:.2s}.filter:hover,.filter.active{background:#8494ff1c;border-color:#8b9cff88;color:#dce2ff}
+    .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.card{background:linear-gradient(145deg,#151f34,#10182a);border:1px solid #27344d;border-radius:16px;padding:18px;min-height:190px;display:flex;flex-direction:column;transition:transform .2s,border-color .2s,box-shadow .2s}.card:hover{transform:translateY(-3px);border-color:#7183d9;box-shadow:0 14px 35px #0004}.cardtop{display:flex;justify-content:space-between;align-items:center}.glyph{width:39px;height:39px;border-radius:12px;background:#8395ff1b;border:1px solid #8797ff30;display:grid;place-items:center;font-size:18px}.tag{font-size:10px;color:#9eadd0;background:#ffffff09;border:1px solid #ffffff12;border-radius:99px;padding:4px 8px}.card h3{font-size:16px;margin:15px 0 5px;letter-spacing:-.02em}.card p{font-size:12px;color:var(--muted);margin:0 0 16px;line-height:1.55}.cardbottom{margin-top:auto;display:flex;align-items:center;justify-content:space-between;color:#9ba9c2;font-size:11px}.visit{color:#b9c4ff;font-weight:700}.visit:hover{color:white}.empty{display:none;text-align:center;padding:45px 15px;color:var(--muted);border:1px dashed var(--line);border-radius:15px}
+    .callout{margin:58px 0 34px;padding:26px;border:1px solid #34415e;border-radius:18px;background:linear-gradient(110deg,#1a2541,#112b31);display:flex;align-items:center;justify-content:space-between;gap:20px}.callout h2{margin:0 0 5px;font-size:20px}.callout p{margin:0;color:#aab8ce;font-size:12px}.cta{background:#dce4ff;color:#10172a;padding:11px 15px;border-radius:10px;font-size:12px;font-weight:800;white-space:nowrap}.cta:hover{background:white}
+    footer{border-top:1px solid #ffffff12;padding:24px 0 32px;color:#8391aa;font-size:11px}.foot{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}.foot a{color:#b6c2dc}.foot a:hover{color:white}
+    @media(max-width:850px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.navlinks{display:none}}
+    @media(max-width:560px){.wrap{width:min(100% - 28px,1160px)}.hero{padding:58px 0 28px}.grid{grid-template-columns:1fr}.hero-meta{gap:10px;flex-wrap:wrap}.callout{align-items:flex-start;flex-direction:column}.section-head{align-items:start;flex-direction:column}.key{display:none}}
+  </style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#" aria-label="EverythingHub home"><span class="logo">E</span>EverythingHub</a>
+    <nav class="navlinks" aria-label="Main navigation"><a href="#explore">Explore</a><a href="#about">About</a><a href="#contribute">Contribute</a></nav>
+    <a class="github" href="https://github.com/" target="_blank" rel="noopener noreferrer">↗ Open-source project</a>
+  </div>
+</header>
+<main class="wrap">
+  <section class="hero">
+    <div class="eyebrow"><span class="dot"></span> A free resource directory</div>
+    <h1>Everything you need.<br><span>All in one place.</span></h1>
+    <p class="sub">A hand-picked starting point for learning, creating, building and getting things done. No paywall. No clutter.</p>
+    <label class="searchbox" aria-label="Search resources">
+      <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+      <input id="search" type="search" placeholder="Search tools, topics, or resources..." autocomplete="off">
+      <span class="key">/</span>
+    </label>
+    <div class="hero-meta"><span>✦ Free to use</span><span>⌘ Curated resources</span><span>↗ External sites open safely</span></div>
+  </section>
+
+  <section id="explore">
+    <div class="section-head"><div><h2>Explore the collection</h2><p>Useful places to start, across the web.</p></div><span class="count" id="count">0 resources</span></div>
+    <div class="filters" id="filters" aria-label="Filter by category"></div>
+    <div class="grid" id="grid"></div>
+    <div class="empty" id="empty">No matches found. Try another search or category.</div>
+  </section>
+
+  <section class="callout" id="contribute">
+    <div><h2>Make the directory better.</h2><p>EverythingHub is designed to grow with community suggestions and open-source contributions.</p></div>
+    <a class="cta" href="https://github.com/" target="_blank" rel="noopener noreferrer">Contribute on GitHub ↗</a>
+  </section>
+  <section id="about" style="max-width:720px;margin:0 auto 48px;text-align:center">
+    <h2 style="font-size:19px;letter-spacing:-.03em">Simple, open and accessible.</h2>
+    <p style="color:var(--muted);font-size:12px">EverythingHub is a free directory, not a host for third-party content. Each resource opens on its original website. Check each provider's terms, pricing and licensing before using or redistributing its materials.</p>
+  </section>
+</main>
+<footer><div class="wrap foot"><span>© <span id="year"></span> EverythingHub · Community-powered directory</span><span>Built for everyone · <a href="LICENSE">MIT License</a> · <a href="README.md">Source & setup</a></span></div></footer>
+<script>
+const resources = [
+  {name:"Khan Academy",category:"Education",icon:"🎓",desc:"Free lessons and practice across maths, science, computing and more.",url:"https://www.khanacademy.org/",type:"Learning"},
+  {name:"MIT OpenCourseWare",category:"Education",icon:"🏛️",desc:"Course materials from a wide range of MIT classes, freely available.",url:"https://ocw.mit.edu/",type:"Courses"},
+  {name:"OpenStax",category:"Education",icon:"📚",desc:"Free, openly licensed textbooks for many school and college subjects.",url:"https://openstax.org/",type:"Textbooks"},
+  {name:"PhET Simulations",category:"Education",icon:"🧪",desc:"Interactive science and mathematics simulations for learning by doing.",url:"https://phet.colorado.edu/",type:"Interactive"},
+  {name:"MDN Web Docs",category:"Technology",icon:"💻",desc:"Reliable documentation and guides for web technologies.",url:"https://developer.mozilla.org/",type:"Documentation"},
+  {name:"GitHub",category:"Technology",icon:"🐙",desc:"Explore and collaborate on software projects and open-source code.",url:"https://github.com/explore",type:"Development"},
+  {name:"freeCodeCamp",category:"Technology",icon:"⌨️",desc:"Free coding lessons, projects and certifications for web development.",url:"https://www.freecodecamp.org/",type:"Learn to code"},
+  {name:"Stack Overflow",category:"Technology",icon:"🧩",desc:"A question-and-answer community for programming problems.",url:"https://stackoverflow.com/",type:"Community"},
+  {name:"Canva",category:"Design",icon:"🎨",desc:"Browser-based design tools for presentations, posters and social graphics.",url:"https://www.canva.com/",type:"Design"},
+  {name:"Photopea",category:"Design",icon:"🖼️",desc:"A browser-based image editor that works with many common formats.",url:"https://www.photopea.com/",type:"Image editing"},
+  {name:"Google Fonts",category:"Design",icon:"🔤",desc:"Browse open-source font families for websites and creative projects.",url:"https://fonts.google.com/",type:"Typography"},
+  {name:"Unsplash",category:"Design",icon:"📷",desc:"Discover photography for creative projects; review image licence terms.",url:"https://unsplash.com/",type:"Photography"},
+  {name:"CapCut",category:"Video & Audio",icon:"🎬",desc:"Video editing tools for short-form and longer creative projects.",url:"https://www.capcut.com/",type:"Video editing"},
+  {name:"Audacity",category:"Video & Audio",icon:"🎧",desc:"Free, open-source audio recording and editing software.",url:"https://www.audacityteam.org/",type:"Audio editing"},
+  {name:"Blender",category:"Video & Audio",icon:"🌀",desc:"Free, open-source 3D creation suite for modelling, animation and more.",url:"https://www.blender.org/",type:"3D creation"},
+  {name:"Steam",category:"Gaming",icon:"🎮",desc:"Discover PC games, community hubs and player-created content.",url:"https://store.steampowered.com/",type:"Games"},
+  {name:"PCGamingWiki",category:"Gaming",icon:"🕹️",desc:"Community-maintained technical fixes and information for PC games.",url:"https://www.pcgamingwiki.com/",type:"Game guides"},
+  {name:"HowLongToBeat",category:"Gaming",icon:"⏱️",desc:"Community estimates for how long games take to complete.",url:"https://howlongtobeat.com/",type:"Game reference"},
+  {name:"ILovePDF",category:"Productivity",icon:"📄",desc:"Online tools for common PDF tasks. Check privacy terms before uploading files.",url:"https://www.ilovepdf.com/",type:"PDF tools"},
+  {name:"WolframAlpha",category:"Productivity",icon:"➗",desc:"Computational answers and help exploring maths and factual questions.",url:"https://www.wolframalpha.com/",type:"Calculator"},
+  {name:"LanguageTool",category:"Productivity",icon:"✍️",desc:"Writing assistance for spelling, grammar and style.",url:"https://languagetool.org/",type:"Writing"},
+  {name:"Internet Archive",category:"Research",icon:"🗃️",desc:"A digital library of websites, books, recordings and other collections.",url:"https://archive.org/",type:"Digital library"},
+  {name:"Google Scholar",category:"Research",icon:"🔎",desc:"Search scholarly literature across many research disciplines.",url:"https://scholar.google.com/",type:"Research"},
+  {name:"Our World in Data",category:"Research",icon:"🌍",desc:"Research and data visualizations on major global issues.",url:"https://ourworldindata.org/",type:"Data"},
+  {name:"Project Gutenberg",category:"Books",icon:"📖",desc:"A large collection of free ebooks, especially public-domain works.",url:"https://www.gutenberg.org/",type:"Ebooks"},
+  {name:"Standard Ebooks",category:"Books",icon:"📘",desc:"Carefully formatted free public-domain ebooks.",url:"https://standardebooks.org/",type:"Ebooks"},
+  {name:"MDN Playground",category:"Developer",icon:"🧑‍💻",desc:"Experiment with web platform examples and code in your browser.",url:"https://developer.mozilla.org/en-US/play",type:"Code playground"},
+  {name:"CodePen",category:"Developer",icon:"🖊️",desc:"Create and share front-end code experiments and demos.",url:"https://codepen.io/",type:"Code playground"},
+  {name:"Excalidraw",category:"Productivity",icon:"✏️",desc:"A simple virtual whiteboard for sketching diagrams and ideas.",url:"https://excalidraw.com/",type:"Whiteboard"}
+];
+const categories = ["All",...new Set(resources.map(r=>r.category))];
+let active = "All";
+const grid = document.getElementById("grid"), search = document.getElementById("search");
+const filters = document.getElementById("filters"), count = document.getElementById("count"), empty = document.getElementById("empty");
+function renderFilters(){
+  filters.innerHTML = categories.map(c=>`<button class="filter ${c===active?"active":""}" type="button" aria-pressed="${c===active}" data-category="${c}">${c}</button>`).join("");
+}
+function render(){
+  const term = search.value.trim().toLowerCase();
+  const shown = resources.filter(r=>(active==="All"||r.category===active) && [r.name,r.category,r.desc,r.type].join(" ").toLowerCase().includes(term));
+  grid.innerHTML = shown.map(r=>`<article class="card"><div class="cardtop"><span class="glyph" aria-hidden="true">${r.icon}</span><span class="tag">${r.category}</span></div><h3>${r.name}</h3><p>${r.desc}</p><div class="cardbottom"><span>${r.type}</span><a class="visit" href="${r.url}" target="_blank" rel="noopener noreferrer" aria-label="Visit ${r.name} (opens in a new tab)">Visit site ↗</a></div></article>`).join("");
+  count.textContent = `${shown.length} ${shown.length===1?"resource":"resources"}`;
+  empty.style.display = shown.length?"none":"block";
+}
+filters.addEventListener("click",e=>{const b=e.target.closest("button[data-category]");if(!b)return;active=b.dataset.category;renderFilters();render();});
+search.addEventListener("input",render);
+document.addEventListener("keydown",e=>{if(e.key==="/" && document.activeElement!==search && !["INPUT","TEXTAREA"].includes(document.activeElement.tagName)){e.preventDefault();search.focus();}});
+document.getElementById("year").textContent=new Date().getFullYear();
+renderFilters();render();
+</script>
+</body>
+</html>
